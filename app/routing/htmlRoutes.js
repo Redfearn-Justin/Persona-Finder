@@ -16,7 +16,6 @@ module.exports = function(app) {
     });
 
     //send user to the home page
-    // if below doesn't work, try using "*" instead
     app.get("/", function(req, res) {
 
         res.sendFile(path.join(__dirname, "../public/home.html"));
