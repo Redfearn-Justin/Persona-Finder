@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
-    <!-- Latest compiled and minified CSS & JS -->
+    <!-- Bootstrap Links -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -27,7 +27,7 @@
       <h1 style="font-family:'Barrio', cursive, Helvetica">Search Your Soul For Answers</h1>
       <hr>
   
-      <h3><strong>Who are you?</strong></h3>
+      <h3><strong> Before we begin, who are you?</strong></h3>
       <br>
       <h4>Name</h4>
       <input type="text" id="name" class="form-control" required="" placeholder="Enter Your Name">
@@ -64,6 +64,9 @@
       <input type="text" id="photo" class="form-control" required="" placeholder="Enter link to an image">
   
       <hr>
+      <br>
+
+      <h3><strong>Now, let the soul-searching begin!</strong></h3>
       <br>
   
       <h3><strong>Question 1</strong></h3>
@@ -182,9 +185,10 @@
   
       <br>
       <br>
+      <br>
   
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+      <button type="submit" class="btn btn-danger btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
        Submit</button>
   
       <hr>
@@ -200,7 +204,7 @@
     <div id="results-modal" class="modal fade" role="dialog">
       <div class="modal-dialog">
   
-        <!-- Modal content-->
+        <!-- Content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">×</button>
@@ -264,20 +268,24 @@
               $("#q10").val()
             ]
           };
-  
-          // AJAX post the data to the friends API.
+
           $.post("/api/friends", userData, function(json) {
-  
-            // Grab the result from the AJAX post so that the best match's: name, arcana and photo are displayed.
+
+
+            // Displaying the best match's: name, arcana and photo.
             $("#match-name").text(json.name);
             $("#match-arcana").text(json.arcana);
             $("#match-img").attr("src", json.photo).css({"width": "250px", "height": "250px"});
-            // Show the modal with the best match
+
+            // revealing modal
             $("#results-modal").modal("toggle");
   
           });
-        } else {
-          alert("Please fill out all fields before submitting!");
+        } 
+        
+        else {
+
+          alert("Looks like you've missed a field. Please go back and resubmit the form!");
         }
       });
     </script>
@@ -285,7 +293,7 @@
   
   
   
-  <div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div>
+  <!-- <div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div> -->
 </body>
-<umsdataelement id="UMSSendDataEventElement"></umsdataelement>
+<!-- <umsdataelement id="UMSSendDataEventElement"></umsdataelement> -->
 </html>

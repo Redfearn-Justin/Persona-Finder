@@ -10,22 +10,71 @@ var personaList = require("../data/friends");
 module.exports = function(app) {
     
     //API GET request
-    app.get("/api/friends", function(req, res) {
+    app.get("/api/friends", function(request, response) {
 
-        res.json(personaList);
+        response.json(personaList);
     });
 
 
     //Below handles when user submit form
 
-    app.post("/api/friends", function(req, res) {
+    app.post("/api/friends", function(request, response) {
 
-        //compatibility logic goes here!!
-        //(comparing answers via score and whatnot)
+        var matches = 0;
 
-        personaList.push(req.body);
-        //res.json(true);
+        var incomingArray = request.body;
 
+        console.log(personaList);
+        console.log(incomingArray);
+
+
+        for (var i = 0; i < personaList.length; i++) {
+
+            console.log("we got into the first for loop");
+
+            
+            for (var j = 0; j < 10; j++ ) {
+                
+
+                console.log("we got into the second for loop");
+
+                //ron originally put "==" instead of "==="; if doesn't work, try two instead
+                
+                if (personaList[i].scores[j] == incomingArray.scores[j]) {
+        
+                    console.log("marking an entry...");
+
+                    matches++;
+
+
+                } //close if statement
+
+            } // close second for loop
+
+            console.log(matches);
+
+            
+        } //close first for loop
+
+
+        //after going through the loops, run the below if/else statements
+
+        // if(Math.max(matches)) {
+
+        //     console.log("inside of last If statement")
+
+        //     var closestMatch = Math.max(matches);
+
+        //     console.log(personaList[i] + " was closen as a match, with: " + closestMatch);
+    
+            // personaList.push(incomingArray);
+    
+            // response.send(closestMatch);
+    
+            // return;
+        // }
+
+    
     });
 }
 
