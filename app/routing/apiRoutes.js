@@ -20,67 +20,73 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(request, response) {
 
-        var matches = 0;
-
-        var matchCountHolder;
-
         var chosenMatch = {};
 
-        var newUser = request.body;
+        // var matchCountHolder;
+
+        var answerTotals = [];
+
+        var newPersona = request.body;
 
         console.log(personaList);
-        console.log(newUser);
+        console.log(newPersona);
 
 
         for (var i = 0; i < personaList.length; i++) {
 
+            var matches = 0; //NEED CLARIFICATION
+
+        
             console.log("we got into the first for loop");
 
             
-            for (var j = 0; j < newUser.scores.length; j++ ) {
-                
+            for (var j = 0; j < newPersona.scores.length; j++ ) {
 
-                console.log("we got into the second for loop");
-                
-                if (personaList[i].scores[j] == newUser.scores[j]) {
-        
-                    console.log("marking an entry...");
+               console.log("we got into the second for loop");
 
-                    matches++;
+               matches += personaList[i].scores[j] === newPersona.scores[j];
 
-                    matchCountHolder = matches;
-
-                    console.log(matchCountHolder);
-
-
-
-                } //close if statement
-
+               console.log(matches);
 
 
             } // close second for loop
 
-            console.log("entering last phase of for loop");
+            answerTotals.push(matches);
 
-            console.log(matches);
+            console.log("Here are the final match scores: " + answerTotals);
+
+
+            if (Math.max(...answerTotals)) {
+
+                console.log("in Math Max if statement");
+
+                var winningNumber = Math.max(...answerTotals);
+
+                console.log(winningNumber);
+
+                //match the winning number to that of the original match
+
+                var matchingVariable = winningNumber = 
+
+
+
+
+                // chosenMatch = {
+                //     chosenMatchName = personaList[i].personaName,
+                //     chosenMatchArcana = personaList[i].personaArcana,
+                //     chosenMatchPhoto = personaList.imageLink,
+                // }
+
+                
+                // personaList.push(newPersona);
+
+                // response.json(chosenMatch);
+
+                // return;
+            }
 
             
         } //close first for loop
-
-        console.log("outside of for loops; last phase underway")
-
-        
-        // if (matchCountHolder >= matches) {
-
-        //     console.log("inside final If statement");
-
-        //     personaList.push(newUser);
-
-        //     response.json(ENTER MATCH HERE);
-
-        //     return;
-
-        // }
     
     });
 }
