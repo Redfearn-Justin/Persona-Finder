@@ -22,10 +22,14 @@ module.exports = function(app) {
 
         var matches = 0;
 
-        var incomingArray = request.body;
+        var matchCountHolder;
+
+        var chosenMatch = {};
+
+        var newUser = request.body;
 
         console.log(personaList);
-        console.log(incomingArray);
+        console.log(newUser);
 
 
         for (var i = 0; i < personaList.length; i++) {
@@ -33,52 +37,61 @@ module.exports = function(app) {
             console.log("we got into the first for loop");
 
             
-            for (var j = 0; j < 10; j++ ) {
+            for (var j = 0; j < newUser.scores.length; j++ ) {
                 
 
                 console.log("we got into the second for loop");
-
-                //ron originally put "==" instead of "==="; if doesn't work, try two instead
                 
-                if (personaList[i].scores[j] == incomingArray.scores[j]) {
+                if (personaList[i].scores[j] == newUser.scores[j]) {
         
                     console.log("marking an entry...");
 
                     matches++;
 
+                    matchCountHolder = matches;
+
+                    console.log(matchCountHolder);
+
+
 
                 } //close if statement
 
+
+
             } // close second for loop
+
+            console.log("entering last phase of for loop");
 
             console.log(matches);
 
             
         } //close first for loop
 
+        console.log("outside of for loops; last phase underway")
 
-        //after going through the loops, run the below if/else statements
+        
+        // if (matchCountHolder >= matches) {
 
-        // if(Math.max(matches)) {
+        //     console.log("inside final If statement");
 
-        //     console.log("inside of last If statement")
+        //     personaList.push(newUser);
 
-        //     var closestMatch = Math.max(matches);
+        //     response.json(ENTER MATCH HERE);
 
-        //     console.log(personaList[i] + " was closen as a match, with: " + closestMatch);
-    
-            // personaList.push(incomingArray);
-    
-            // response.send(closestMatch);
-    
-            // return;
+        //     return;
+
         // }
-
     
     });
 }
 
 
-// TO DO (NOTES)
+// INCOMPLETE: Can't resolve the following: 
 
-// add functionality to "clear" entries?
+//1 If statement (line 43) runs the ENTIRE friends array when screening matches
+    // can't get it to just run PER object
+
+//2 don't know how to send final result to the client
+    //perhaps response.send(finalMatchPick)?
+
+//OTHER: Nodemon doesn't work properly with application
