@@ -20,6 +20,8 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(request, response) {
 
+        var totalDifference = 1000;
+
         var answerTotals = [];
 
         var newPersona = request.body;
@@ -42,48 +44,41 @@ module.exports = function(app) {
 
                matches += personaList[i].scores[j] === newPersona.scores[j];
 
-               matchpoints = matches;
-
-               console.log(matches);
-
             } // close second for loop
 
             answerTotals.push(matches);
 
             console.log("Here are the final match scores: " + answerTotals);
 
+            //when IF statement here, does not accurately get the highest scoring name
 
-            if (Math.max(...answerTotals)) {
-
-                var winningNumber = Math.max(...answerTotals);
-
-                console.log(winningNumber);
-
-                //match the winning number to that of the original match
-
-                var matchVariable = winningNumber.indexOf()
-
-                
-                // personaList.push(newPersona);
-
-                // response.json(chosenMatch);
-
-                // return;
-
-            } //close if statement
+            // just grabs the name of the LAST entry in Friends.js
 
             
         } //close first for loop
+
+
+        //IF statement here does not recognize "personaName"
+
+        if (Math.max(...answerTotals)) {
+
+            totalDifference = matches;
+
+            var name = personaList[i].personaName;
+
+            console.log(name);
+
+            // var winningNumber = Math.max(...answerTotals);
+
+            //UNRESOLVED: match the "winning" number with that of the actual Persona
+            
+            // personaList.push(newPersona);
+
+            // response.json(chosenMatch);
+
+            // return;
+
+        } //close if statement
     
     });
 }
-
-// INCOMPLETE: Can't resolve the following: 
-
-//1 If statement (line 43) runs the ENTIRE friends array when screening matches
-    // can't get it to just run PER object
-
-//2 don't know how to send final result to the client
-    //perhaps response.send(finalMatchPick)?
-
-//OTHER: Nodemon doesn't work properly with application
