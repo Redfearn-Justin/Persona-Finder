@@ -20,10 +20,6 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(request, response) {
 
-        var chosenMatch = {};
-
-        // var matchCountHolder;
-
         var answerTotals = [];
 
         var newPersona = request.body;
@@ -46,8 +42,9 @@ module.exports = function(app) {
 
                matches += personaList[i].scores[j] === newPersona.scores[j];
 
-               console.log(matches);
+               matchpoints = matches;
 
+               console.log(matches);
 
             } // close second for loop
 
@@ -58,24 +55,13 @@ module.exports = function(app) {
 
             if (Math.max(...answerTotals)) {
 
-                console.log("in Math Max if statement");
-
                 var winningNumber = Math.max(...answerTotals);
 
                 console.log(winningNumber);
 
                 //match the winning number to that of the original match
 
-                var matchingVariable = winningNumber = 
-
-
-
-
-                // chosenMatch = {
-                //     chosenMatchName = personaList[i].personaName,
-                //     chosenMatchArcana = personaList[i].personaArcana,
-                //     chosenMatchPhoto = personaList.imageLink,
-                // }
+                var matchVariable = winningNumber.indexOf()
 
                 
                 // personaList.push(newPersona);
@@ -83,14 +69,14 @@ module.exports = function(app) {
                 // response.json(chosenMatch);
 
                 // return;
-            }
+
+            } //close if statement
 
             
         } //close first for loop
     
     });
 }
-
 
 // INCOMPLETE: Can't resolve the following: 
 
