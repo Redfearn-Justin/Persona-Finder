@@ -20,27 +20,17 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(request, response) {
 
-        var totalDifference = 1000;
-
         var answerTotals = [];
 
         var newPersona = request.body;
-
-        console.log(personaList);
-        console.log(newPersona);
 
 
         for (var i = 0; i < personaList.length; i++) {
 
             var matches = 0; //NEED CLARIFICATION
 
-        
-            console.log("we got into the first for loop");
-
             
             for (var j = 0; j < newPersona.scores.length; j++ ) {
-
-               console.log("we got into the second for loop");
 
                matches += personaList[i].scores[j] === newPersona.scores[j];
 
@@ -48,37 +38,32 @@ module.exports = function(app) {
 
             answerTotals.push(matches);
 
-            console.log("Here are the final match scores: " + answerTotals);
 
-            //when IF statement here, does not accurately get the highest scoring name
-
-            // just grabs the name of the LAST entry in Friends.js
+            //when IF statement here, does not accurately get the highest scoring name; just grabs the name of the LAST entry in Friends.js
 
             
         } //close first for loop
 
+        
+        console.log("Here are the final match scores: " + answerTotals);
 
-        //IF statement here does not recognize "personaName"
+        //NOTE: IF statement here does not recognize "personaName"
 
-        if (Math.max(...answerTotals)) {
+        var indexOfMaxValue = answerTotals.indexOf(Math.max(...answerTotals));
 
-            totalDifference = matches;
+        console.log("\n\nhere is the index answer: " + indexOfMaxValue);
 
-            var name = personaList[i].personaName;
+        console.log("\n\nHere's the matching persona (hopefully): " + JSON.stringify(personaList[indexOfMaxValue].personaName));
 
-            console.log(name);
+        console.log("\n\nHere's the matching persona (hopefully): " + personaList[indexOfMaxValue].personaName);
 
-            // var winningNumber = Math.max(...answerTotals);
+        /*
+        personaList.push(newPersona);
 
-            //UNRESOLVED: match the "winning" number with that of the actual Persona
-            
-            // personaList.push(newPersona);
+        response.json(chosenMatch);
 
-            // response.json(chosenMatch);
+        return;
+        */
 
-            // return;
-
-        } //close if statement
-    
     });
 }
