@@ -53,7 +53,7 @@ module.exports = function(app) {
 
         console.log("\n\nhere is the index answer: " + indexOfMaxValue);
 
-        console.log("\n\nHere's the matching persona (hopefully): " + JSON.stringify(personaList[indexOfMaxValue].personaName));
+        console.log("\n\n[JSON Stringify version] Here's the matching persona (hopefully): " + JSON.stringify(personaList[indexOfMaxValue].personaName));
 
         console.log("\n\nHere's the matching persona (hopefully): " + personaList[indexOfMaxValue].personaName);
 
