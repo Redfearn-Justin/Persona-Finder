@@ -159,7 +159,7 @@ var personaArray = [
     {
         personaName: "Hua Po",
         personaArcana: "The Hanged Man",
-        imageLink: "http://megamitensei.wikia.com/wiki/Hua_Po?file=HuaPo.jpg",
+        imageLink: "http://i68.servimg.com/u/f68/18/40/56/13/hua_po11.png",
         scores: [
             "3",
             "5",
