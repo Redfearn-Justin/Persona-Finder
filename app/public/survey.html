@@ -208,7 +208,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">×</button>
-            <h2 class="modal-title"><strong>This Persona fits you..</strong></h2>
+            <h2 class="modal-title"><strong>You've summoned this Persona..</strong></h2>
           </div>
           <div class="modal-body">
             <h2 id="match-name"></h2>
@@ -273,9 +273,9 @@
 
 
             // Displaying the best match's: name, arcana and photo.
-            $("#match-name").text(json.name);
-            $("#match-arcana").text(json.arcana);
-            $("#match-img").attr("src", json.photo).css({"width": "250px", "height": "250px"});
+            $("#match-name").text(json.personaName);
+            $("#match-arcana").text(json.personaArcana);
+            $("#match-img").attr("src", json.ImageLink).css({"width": "400px", "height": "400px"});
 
             // revealing modal
             $("#results-modal").modal("toggle");

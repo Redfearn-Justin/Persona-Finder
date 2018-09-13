@@ -27,7 +27,7 @@ module.exports = function(app) {
 
         for (var i = 0; i < personaList.length; i++) {
 
-            var matches = 0; //NEED CLARIFICATION
+            var matches = 0;
 
             
             for (var j = 0; j < newPersona.scores.length; j++ ) {
@@ -38,32 +38,26 @@ module.exports = function(app) {
 
             answerTotals.push(matches);
 
-
-            //when IF statement here, does not accurately get the highest scoring name; just grabs the name of the LAST entry in Friends.js
-
             
         } //close first for loop
 
+        //Log results, via variables and logs
+        //=================================================================
         
         console.log("Here are the final match scores: " + answerTotals);
 
-        //NOTE: IF statement here does not recognize "personaName"
-
         var indexOfMaxValue = answerTotals.indexOf(Math.max(...answerTotals));
+
+        var chosenMatch = personaList[indexOfMaxValue];
 
         console.log("\n\nhere is the index answer: " + indexOfMaxValue);
 
-        console.log("\n\n[JSON Stringify version] Here's the matching persona (hopefully): " + JSON.stringify(personaList[indexOfMaxValue].personaName));
-
-        console.log("\n\nHere's the matching persona (hopefully): " + personaList[indexOfMaxValue].personaName);
-
-        /*
+        //Push the new Persona to list & Send chosen match to user
+        //=====================================================================
+     
         personaList.push(newPersona);
 
-        response.json(chosenMatch);
+        response.json({personaName: chosenMatch.personaName, personaArcana: chosenMatch.personaArcana, ImageLink: chosenMatch.imageLink});
 
-        return;
-        */
-
-    });
+    }); //closes Post
 }
