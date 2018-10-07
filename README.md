@@ -30,7 +30,7 @@ But beware, *every player will have a chance to enter their own "Persona" as wel
 
 **And that's the game!**
 
-![Ending Gif](https://media.giphy.com/media/iMcarxUAQ9FGU/giphy.gif)
+![Ending Gif](https://media.giphy.com/media/z6TMaaNJKIAX6/source.gif)
 
 
 
