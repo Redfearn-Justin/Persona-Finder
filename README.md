@@ -4,9 +4,17 @@
 
 ![Persona 5 Gif](https://media.giphy.com/media/6utNCdD4x6ZUVxNMYp/source.gif)
 
+### Project Insight
+
 Hello newcomer to Mementos! This is the time and place where you answer the lifelong question, "what persona do I hold within myself". *Just answer a few set of "soul-seeking" questions* and you'll finally see what Persona awaits you at the end! 
 
 But beware, *every player will have a chance to enter their own "Persona" as well*. You just may be very, very surprised with who you get matched up with at the end! Only time will tell your results, now go forth and seek that which is your destiny! 
+
+### Technologies utilized
+
+* **Backend**: Node.js & Express.js
+* **Frontend**: HTML, CSS, Javascript, Bootstrap
+* **Other**: Heroku
 
 # Instructions
 
@@ -31,8 +39,3 @@ But beware, *every player will have a chance to enter their own "Persona" as wel
 **And that's the game!**
 
 ![Ending Gif](https://media.giphy.com/media/z6TMaaNJKIAX6/source.gif)
-
-
-
-
-
