@@ -1,6 +1,6 @@
 # Persona finder
 
-# Overview
+## Overview
 
 ![Persona 5 Gif](https://media.giphy.com/media/6utNCdD4x6ZUVxNMYp/source.gif)
 
@@ -16,26 +16,26 @@ But beware, *every player will have a chance to enter their own "Persona" as wel
 * **Frontend**: HTML, CSS, Javascript, Bootstrap
 * **Other**: Heroku
 
-# Instructions
+## Instructions
 
-## Step One
+### Step One
 
 * After the page loads, press the "start" button at the bottom of the page to move to the survey.
 
-## Step Two
+### Step Two
 
 * At the top of the Survey page, before you start your quiz, you'll be **required** to enter your name, the arcana of your choosing, and a valid link to a picture of yourself.
 * Don't fret, this is merely for "*fun and games*", nothing more or less
 
-## Step Three
+### Step Three
 
 * Answer the following ten questions to your heart's desire. Answer truthfully to get the *optimal* resolution.
 
-## Step Four
+### Step Four
 
 * When you feel confident of your answers, press the "submit" button to reach your just conclusion.
 
 
-**And that's the game!**
+### And that's the game!
 
 ![Ending Gif](https://media.giphy.com/media/z6TMaaNJKIAX6/source.gif)
