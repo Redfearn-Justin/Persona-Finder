@@ -35,7 +35,6 @@ But beware, *every player will have a chance to enter their own "Persona" as wel
 
 * When you feel confident of your answers, press the "submit" button to reach your just conclusion.
 
-
 ### And that's the game!
 
 ![Ending Gif](https://media.giphy.com/media/z6TMaaNJKIAX6/source.gif)
